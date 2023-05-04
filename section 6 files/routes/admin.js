@@ -3,6 +3,9 @@ const path=require('path')
 const router = express.Router();
 
 
+const product=[];
+
+
 
 //admin/add-product=>with get
 //dir name mean the dirctory of files which here means routes , we bput ../ to get out one level
@@ -14,6 +17,12 @@ router.get("/add-product", (req, res, next) => {
 //admin/add-product=>with post
 router.post("/add-product", (req, res, next) => {
   res.redirect("/");
+
   console.log(req.body);
+
+  product.push({title:req.body.title});
+
+  
 });
-module.exports = router;
+exports.router = router;
+exports.product=product
