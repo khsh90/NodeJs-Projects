@@ -11,6 +11,7 @@ const product=[];
 //dir name mean the dirctory of files which here means routes , we bput ../ to get out one level
 router.get("/add-product", (req, res, next) => {
   res.sendFile(path.join(__dirname,'..','views','add-product.html'))
+  res.render('add-product',{pageTitle:'add-product',path:'/admin/add-product'},)
 });
 
 
